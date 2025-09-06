@@ -35,6 +35,11 @@ const HomePage = () => {
 
         };
         fetchNotes();
+
+        const interval = setInterval(fetchNotes, 4000);
+
+        return () => clearInterval(interval); // cleanup when component unmounts
+
     }, []);
     return (
         <div className="min-h-screen">
